@@ -1,0 +1,29 @@
+-------Answers-------
+
+i. 
+
+	the function modify sorts the array (flavor of selection sort)
+
+ii.
+
+	at the end of the program some cleanup code been function exit() been called which perform some cleanup code
+	finally, the function _exit_halt been called which enters an infiniti loop (flag 1,nop,nop,nop)
+
+iii.
+
+	1.
+	replace	: from 0x00010104 to 0x00010120 - 28 bytes
+	modify 	: from 0x00010120 to 0x00010180 - 96 bytes
+	main	: from 0x00010180 to 0x0001018e - 14 bytes
+
+	2.
+	the total size of .text section is 3512 bytes
+
+	3.
+	the difference is due to startup code and cleanup code the compiler adds before our main() starts and after
+	our main() adds. in addition, there are some padding areas when allignment is needed.
+
+iv.
+
+	out - r7
+	in  - r4
