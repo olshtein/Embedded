@@ -6,8 +6,11 @@ all:
 	mcc -a6 ex0_tag.s -o ex0_tag.out 
 
 tar:
-	tar cvf ex0.tar ex0.c ex0_tag.s makefile README
+	tar cvf avishl02_matanp01 ex0.c ex0_tag.s makefile README
 
 clean:
 	rm -f ex0.s ex0.map ex0.out ex0.dbg.s ex0.dbg.map ex0.dbg.out ex0_tag.out
+
+test: clean all tar
+	~embsys/ARC/MetaWare/arc/bin/embsys_check_ex0.sh avishl02_matanp01
 

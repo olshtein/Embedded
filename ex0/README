@@ -1,14 +1,17 @@
 avishl02, matanp01
 Avishai Lazar 066641200
 Matan Perel 039998570
-Exercise 0
-README - this file
-makefile - a make file
-ex1.0 - source we got from the TA
-ex0_tag.s - modification of the original assembly to inline the function 'replace'
-==================================================================================
 
------ANSWERS-----
+project: Exercise 0
+
+submited files:
+
+	README 		- this file
+	makefile 	- a make file
+	ex1.0 		- source we got from the TA
+	ex0_tag.s 	- modification of the original assembly to inline the function 'replace'
+
+===========================ANSWERS============================================
 
 i. 
 

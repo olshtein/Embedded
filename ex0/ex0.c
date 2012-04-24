@@ -28,11 +28,8 @@ void modify(int list[], int size)
 
 int data[] = {4, 8, 2, 6, 7, 8, 10, 5};
 
-int bla;
-
 void main (void)
 {
-	bla = 0x12345678;
 	int nItems = sizeof(data) / sizeof(int);
 
 	modify(data, nItems);
