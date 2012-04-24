@@ -1,4 +1,14 @@
--------Answers-------
+avishl02, matanp01
+Avishai Lazar 066641200
+Matan Perel 039998570
+Exercise 0
+README - this file
+makefile - a make file
+ex1.0 - source we got from the TA
+ex0_tag.s - modification of the original assembly to inline the function 'replace'
+==================================================================================
+
+-----ANSWERS-----
 
 i. 
 
@@ -59,4 +69,3 @@ vi.
 	first 16 bits with the second 16 bits you'll get the same value.
 	according page 15 in the manual, which states the 32bit instruction bytes presentation it said that
 	the ordering of the bytes are Byte2,Byte3,Byte0,Byte1 and this is exactly what we observed.
-
