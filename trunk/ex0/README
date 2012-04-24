@@ -30,5 +30,33 @@ iv.
 	in  - r4
 
 v.
-	the assembly command asl does Arithmetic Shift Left. all bits move one place to the left and
-	0 been added to the LSB.
+	the assembly command asl does Arithmetic Shift Left. all bits move one place (or more in case of 3 parameters)
+	to the left and	0 been added to the LSB.
+
+vi.
+	1.
+	we took from the manual the asl which uses 2 registers and numerical value asl<.f> a,b,u6
+	according the manual the machine code is 00101bbb01000000FBBBuuuuuuAAAAAA where
+	bbb are lower bits of source register, BBB are upper bits of source register, AAAAAA bits of
+	destination registers, u the value of the shift and F is the flag setting.
+
+	in our case: 
+		b = r5 -> encoded as 000101 (bbb = 101, BBB = 000)
+		a = r0 -> encoded as 000000
+		u = 2  -> encoded as 000010
+		F = 0
+	
+	the machine code is: 0010 1101 0100 0000 0000 0000 1000 0000 
+
+	2.
+	the hex value of this instruction (taken from the text memory) is 0x00802d40
+	and the binary representation is: 0000 0000 1000 0000 0010 1101 0100 0000
+
+
+
+	3.
+	clearley they are not the same but you can see that if you swith the places of the
+	first 16 bits with the second 16 bits you'll get the same value.
+	according page 15 in the manual, which states the 32bit instruction bytes presentation it said that
+	the ordering of the bytes are Byte2,Byte3,Byte0,Byte1 and this is exactly what we observed.
+
