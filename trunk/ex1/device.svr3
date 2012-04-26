@@ -1,0 +1,31 @@
+/////////////////////////////////////////////////////
+// device.svr3
+//  Memory mapping file
+/////////////////////////////////////////////////////
+
+
+// hardware
+ROM_START = 0x0;
+ROM_SIZE = 8K;
+SRAM_START = 0x80000;
+SRAM_SIZE = 48K;
+
+MEMORY {
+    MYROM: ORIGIN = ROM_START,  LENGTH = ROM_SIZE
+    MYRAM: ORIGIN = SRAM_START, LENGTH = SRAM_SIZE
+}
+
+INITDATA !data
+
+// section mapping
+SECTIONS {
+    GROUP: {
+        * (TEXT) : {}
+        * (LIT)  : {}
+    } > MYROM
+    GROUP : {
+        * (DATA) : {}
+        * (BSS)  : {}
+        .stack ALIGN(4) SIZE(DEFINED _STACKSIZE?_STACKSIZE:1K): {}
+    } > MYRAM
+}
