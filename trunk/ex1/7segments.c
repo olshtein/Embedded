@@ -1,4 +1,5 @@
 #include "7segments.h"
+#include "defs.h"
 
 #define DIGIT_0 0x3f
 #define DIGIT_1 0x06
@@ -22,18 +23,18 @@
 #define RIGHT_7SEGMENT_BIT 0x00
 #define SEGMENTS_ADDR 0x104
 
-char digitsMasks[] = {DIGIT_0,DIGIT_1,DIGIT_2,DIGIT_3,DIGIT_4,DIGIT_5,DIGIT_6,DIGIT_7,DIGIT_8,DIGIT_9,DIGIT_A,DIGIT_B,DIGIT_C,DIGIT_D,DIGIT_E,DIGIT_F};
+INT8 digitsMasks[] = {DIGIT_0,DIGIT_1,DIGIT_2,DIGIT_3,DIGIT_4,DIGIT_5,DIGIT_6,DIGIT_7,DIGIT_8,DIGIT_9,DIGIT_A,DIGIT_B,DIGIT_C,DIGIT_D,DIGIT_E,DIGIT_F};
 
 void segmentsInit()
 {
     segmentsSetNumber(0);
 }
 
-void segmentsSetNumber(const char number)
+void segmentsSetNumber(const INT8 number)
 {
     
-    const char rightDigit = number & 0x0f;
-    const char leftDigit = (number >> 4) & 0x0f;
+    const INT8 rightDigit = number & 0x0f;
+    const INT8 leftDigit = (number >> 4) & 0x0f;
 
     //set the left digit display
     _sr(digitsMasks[leftDigit] | LEFT_7SEGMENT_BIT, SEGMENTS_ADDR) ;
